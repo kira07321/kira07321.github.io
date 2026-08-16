@@ -5,8 +5,13 @@
 
 const SITE_CONFIG = {
   // 联系表单发送到哪个邮箱
-  email: "you@example.com",
-  name: "你的名字",
+  email: "2874984979@qq.com",
+  name: "叽叽啾啾",
+  emailjs: {
+    publicKey: "gX48xZ3X62E4HmDNX",
+    serviceId: "service_eooi815",
+    templateId: "template_ttb9vw9",
+  },
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -223,8 +228,44 @@ function initContactForm() {
       return;
     }
 
-    if (SITE_CONFIG.email === "you@example.com") {
-      tip.textContent = "提示：先在 js/main.js 里把 SITE_CONFIG.email 改成你的真实邮箱，表单才会真正发出邮件。";
+    const emailjsPublicKey = SITE_CONFIG.emailjs.publicKey;
+    const serviceId = SITE_CONFIG.emailjs.serviceId;
+    const templateId = SITE_CONFIG.emailjs.templateId;
+
+    if (
+      !emailjsPublicKey ||
+      emailjsPublicKey === "YOUR_PUBLIC_KEY" ||
+      !serviceId ||
+      serviceId === "YOUR_SERVICE_ID" ||
+      !templateId ||
+      templateId === "YOUR_TEMPLATE_ID"
+    ) {
+      tip.textContent = "提示：先在 js/main.js 里填好 EmailJS 的 publicKey、serviceId 和 templateId，表单才会真正发出邮件。";
+      return;
+    }
+
+    if (window.emailjs) {
+      emailjs.init({ publicKey: emailjsPublicKey });
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: SITE_CONFIG.email === "you@example.com" ? "your-email@example.com" : SITE_CONFIG.email,
+      };
+
+      tip.textContent = "正在发送留言...";
+
+      emailjs
+        .send(serviceId, templateId, templateParams)
+        .then(() => {
+          tip.textContent = "留言发送成功！我已收到你的消息。";
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("EmailJS send error:", error);
+          tip.textContent = "发送失败，请检查 EmailJS 配置或网络连接。";
+        });
       return;
     }
 
