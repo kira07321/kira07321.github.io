@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页 · 我的数字名片</title>
+  <meta name="description" content="个人网页：关于我、技能、回忆录与联系方式。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== 顶部导航 ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">个人主页</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="主导航">
+        <a href="#home" class="active">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#skills">技能</a>
+        <a href="#memoir">回忆录</a>
+        <a href="#gallery">相册</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="切换深色模式" title="切换深色模式">🌙</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== 首页 / 头像区 ===================== -->
+    <section id="home" class="hero">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting reveal">你好，我是</p>
+          <!-- 替换成你的名字 -->
+          <h1 class="hero-name reveal" data-delay="1">叽叽啾啾</h1>
+          <!-- 下面的文字会被 JS 逐字打出来 -->
+          <p class="hero-subtitle" id="typedText" data-text="前端开发 / 终身学习者 / 生活记录者"></p>
+          <p class="hero-desc reveal" data-delay="2">
+            这里是我的个人主页：记录我走过的路、正在做的事，以及那些值得被记住的瞬间。
+          </p>
+          <div class="hero-actions reveal" data-delay="3">
+            <a href="#contact" class="btn btn-primary">联系我</a>
+            <a href="#memoir" class="btn btn-ghost">阅读回忆录</a>
+          </div>
+        </div>
+
+        <div class="hero-avatar reveal" data-delay="2">
+          <div class="avatar-ring"></div>
+          <!-- 把 assets/avatar.svg 换成你自己的照片即可 -->
+          <img src="assets/touxiang.jpg" alt="个人头像">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 关于我 ===================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">About</span>
+          <h2>关于我</h2>
+          <p>简单介绍一下自己</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <p class="about-text">
+              你好！我是 <strong>叽叽啾啾</strong>，目前是一名学生，正在努力学习喵！
+            </p>
+            <ul class="about-info">
+              <li><span>📍 所在地</span> 中国 · 马鞍山市</li>
+              <li><span>💼 职业</span> 学生</li>
+              <li><span>🎂 生日</span> 2007年3月21日</li>
+              <li><span>❤️ 爱好</span> 游戏、唱歌、睡大觉！</li>
+              <li><span>🌐 语言</span> 中文</li>
+            </ul>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card reveal" data-delay="1">
+              <span class="stat-num" data-count="10">0</span>
+              <span class="stat-label">年人生经历</span>
+            </div>
+            <div class="stat-card reveal" data-delay="2">
+              <span class="stat-num" data-count="50">0</span>
+              <span class="stat-label">完成的小目标</span>
+            </div>
+            <div class="stat-card reveal" data-delay="3">
+              <span class="stat-num" data-count="100">0</span>
+              <span class="stat-label">认识的有趣朋友</span>
+            </div>
+            <div class="stat-card reveal" data-delay="4">
+              <span class="stat-num" data-count="3650">0</span>
+              <span class="stat-label">度过的日子</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 技能 ===================== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Skills</span>
+          <h2>技能</h2>
+          <p>我擅长和正在学习的东西</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3>专业技能</h3>
+            <div class="skill-item">
+              <div class="skill-label"><span>java</span><span class="skill-percent">40%</span></div>
+              <div class="skill-bar"><span class="skill-fill" data-width="40%"></span></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>Python / 自动化</span><span class="skill-percent">0%</span></div>
+              <div class="skill-bar"><span class="skill-fill" data-width="0%"></span></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>UI 设计与审美</span><span class="skill-percent">20%</span></div>
+              <div class="skill-bar"><span class="skill-fill" data-width="20%"></span></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label"><span>吃喝玩乐</span><span class="skill-percent">100%</span></div>
+              <div class="skill-bar"><span class="skill-fill" data-width="100%"></span></div>
+            </div>
+          </div>
+
+          <div class="skill-group reveal" data-delay="1">
+            <h3>工具与兴趣</h3>
+            <div class="chip-list">
+              <span class="chip">VS Code</span>
+              <span class="chip">Git</span>
+              <span class="chip">VR</span>
+              <span class="chip">AI</span>
+              <span class="chip">JAVA</span>
+              <span class="chip">Python</span>
+            </div>
+            <p class="skill-note">始终保持好奇心，正在学习 AI 新玩法。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 回忆录 ===================== -->
+    <section id="memoir" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Memoir</span>
+          <h2>回忆录</h2>
+          <p>那些年，值得被记住的时刻</p>
+        </div>
+
+        <div class="timeline">
+          <!-- 按时间从旧到新添加你的回忆；年份和标题可直接修改 -->
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2018</span>
+              <h3>十八岁</h3>
+              <p>前往合肥读书</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2020</span>
+              <h3>第一个项目</h3>
+              <p>正在制作中...</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2022</span>
+              <h3>第一次一个人出省</h3>
+              <p>一个人购买高铁票，一个人坐车，路途上的风景也因为我内心的激动而变得更加美丽。</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2024</span>
+              <h3>一场说走就走的旅行</h3>
+              <p>去了武汉、岳阳、泰州，见认识的朋友。</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2026</span>
+              <h3>现在与未来</h3>
+              <p>继续学习、继续记录。下一段故事，正在发生。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 相册 ===================== -->
+    <section id="gallery" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Gallery</span>
+          <h2>相册</h2>
+          <p>生活里的一些片段</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- 把 assets/gallery-1.svg 等替换成你的真实照片即可 -->
+          <figure class="gallery-item reveal">
+            <img src="assets/gallery-1.svg" alt="照片占位 1" loading="lazy">
+            <figcaption>旅途中的风景</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-delay="1">
+            <img src="assets/gallery-2.svg" alt="照片占位 2" loading="lazy">
+            <figcaption>和朋友在一起</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-delay="2">
+            <img src="assets/gallery-3.svg" alt="照片占位 3" loading="lazy">
+            <figcaption>城市的黄昏</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-delay="3">
+            <img src="assets/gallery-4.svg" alt="照片占位 4" loading="lazy">
+            <figcaption>日常的小确幸</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 联系方式 ===================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Contact</span>
+          <h2>联系方式</h2>
+          <p>欢迎随时找我聊聊</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <!-- 改成你的真实联系方式 -->
+            <a class="contact-card" href="mailto:you@example.com">
+              <span class="contact-icon">✉️</span>
+              <span class="contact-label">邮箱</span>
+              <span class="contact-value">2874984979@qq.com</span>
+            </a>
+            <a class="contact-card" href="tel:+8613800000000">
+              <span class="contact-icon">📞</span>
+              <span class="contact-label">电话</span>
+              <span class="contact-value">才不告诉你呢！</span>
+            </a>
+            <div class="contact-card">
+              <span class="contact-icon">📍</span>
+              <span class="contact-label">地址</span>
+              <span class="contact-value">中国 · 马鞍山市</span>
+            </div>
+            <div class="contact-card">
+              <span class="contact-icon">💬</span>
+              <span class="contact-label">/ QQ</span>
+              <span class="contact-value">2874984979</span>
+            </div>
+            <div class="social-row">
+              <!-- 改成你的社交链接 -->
+              <a href="https://github.com/kira07321" target="_blank" rel="noopener" title="GitHub">GitHub</a>
+              <a href="https://space.bilibili.com/419675337" target="_blank" rel="noopener" title="Bilibili">B站</a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" data-delay="1">
+            <h3>给我留言</h3>
+            <div class="form-row">
+              <label for="formName">你的称呼</label>
+              <input type="text" id="formName" name="name" placeholder="怎么称呼你？" required>
+            </div>
+            <div class="form-row">
+              <label for="formEmail">你的邮箱</label>
+              <input type="email" id="formEmail" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="form-row">
+              <label for="formMessage">留言内容</label>
+              <textarea id="formMessage" name="message" rows="5" placeholder="想对我说点什么..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">发送留言</button>
+            <p class="form-tip" id="formTip"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== 页脚 ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 你的名字 · 用心生活，认真记录</p>
+      <p class="footer-links">
+        <a href="#home">首页</a> ·
+        <a href="#memoir">回忆录</a> ·
+        <a href="#contact">联系我</a>
+      </p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
